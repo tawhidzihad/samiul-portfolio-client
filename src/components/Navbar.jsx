@@ -12,7 +12,7 @@ export default function Navbar() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
-		<nav className="fixed left-1/2 top-8 md:top-7 lg:top-12 -translate-x-1/2 -translate-y-1/2 z-50 w-full md:mx-auto md:max-w-4xl backdrop-blur-xs bg-black/5 lg:rounded-xl lg:border border-blue-900">
+		<nav className="fixed left-1/2 top-8 lg:top-12 -translate-x-1/2 -translate-y-1/2 z-50 w-full md:mx-auto md:max-w-4xl backdrop-blur-xs bg-black/5 lg:rounded-xl lg:border border-blue-900">
 			{/* For Large Screens */}
 			<header className="flex py-2 w-full items-center justify-between px-3">
 				{/* Logo and Name */}
@@ -69,7 +69,7 @@ export default function Navbar() {
 						<a
 							href="https://wa.me/+8801773070054"
 							target="_blank"
-							className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-blue-400/20 bg-linear-to-r from-blue-600 to-blue-500 px-4 py-2 font-medium text-white shadow-[0_0_25px_rgba(59,130,246,0.35)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(59,130,246,0.6)]"
+							className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-blue-400/20 bg-linear-to-r from-blue-600 to-blue-500 px-3 md:px-4 py-2 font-medium text-white shadow-[0_0_25px_rgba(59,130,246,0.35)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(59,130,246,0.6)]"
 						>
 							{/* Glow Effect */}
 							<span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
