@@ -2,21 +2,23 @@
 
 import NavigationLinks from "@/UI/NavigationLinks";
 import ThemeToggle from "@/UI/ThemeToggle";
-import { Button } from "@heroui/react";
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import { RiMenuLine, RiMenuUnfoldFill } from "react-icons/ri";
 
 export default function Navbar() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
-		<nav className="fixed left-1/2 top-8 lg:top-12 -translate-x-1/2 -translate-y-1/2 z-50 w-full md:mx-auto md:max-w-5xl backdrop-blur-xs bg-black/5 lg:rounded-xl border border-gray-200">
+		<nav className="fixed left-1/2 top-8 md:top-7 lg:top-12 -translate-x-1/2 -translate-y-1/2 z-50 w-full md:mx-auto md:max-w-4xl backdrop-blur-xs bg-black/5 lg:rounded-xl lg:border border-blue-900">
 			{/* For Large Screens */}
-			<header className="flex py-3 w-full items-center justify-between px-5 relative">
+			<header className="flex py-2 w-full items-center justify-between px-3">
 				{/* Logo and Name */}
 				<div className="flex items-center gap-4">
 					<button
-						className="md:hidden"
+						className="text-white md:hidden relative"
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
 						aria-label="Toggle menu"
 						aria-expanded={isMenuOpen}
@@ -30,11 +32,18 @@ export default function Navbar() {
 							)}
 						</div>
 					</button>
-					<div className="flex items-center gap-3">
-						<h1 className="bg-linear-to-r from-blue-300 to-indigo-500 rounded-xl h-9 w-9 flex justify-center items-center">
-							<span className="text-3xl text-white">S</span>
-						</h1>
-						{/* <p className="font-medium"></p> */}
+					<div>
+						<div className="flex justify-center items-center">
+							<Link href={"/"}>
+								<Image
+									src={"/images/logo.png"}
+									alt=""
+									width={100}
+									height={100}
+									className="rounded-full h-13 w-auto"
+								/>
+							</Link>
+						</div>
 					</div>
 				</div>
 
@@ -57,14 +66,35 @@ export default function Navbar() {
 							<ThemeToggle></ThemeToggle>
 						</div>
 
-						<Button>Contact</Button>
+						<a
+							href="https://wa.me/+8801773070054"
+							target="_blank"
+							className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-blue-400/20 bg-linear-to-r from-blue-600 to-blue-500 px-4 py-2 font-medium text-white shadow-[0_0_25px_rgba(59,130,246,0.35)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(59,130,246,0.6)]"
+						>
+							{/* Glow Effect */}
+							<span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+							{/* Animated Shine */}
+							<span className="absolute -left-20 top-0 h-full w-16 rotate-12 bg-white/20 blur-md transition-all duration-700 group-hover:left-[120%]" />
+
+							<span className="relative flex items-center gap-2">
+								Contact
+								<FaWhatsapp className="text-lg transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+							</span>
+						</a>
 					</div>
 				</div>
 			</header>
 
 			{/* For Mobile Devices */}
-			{isMenuOpen && (
-				<div className="absolute z-50 w-full bg-white dark:bg-black md:hidden">
+			<div
+				className={`md:hidden absolute z-50 w-full bg-blue-950 dark:bg-black ${
+					isMenuOpen
+						? "opacity-100 transition-all duration-300 translate-y-0 scale-100"
+						: "opacity-0 transition-all duration-300 -translate-y-3 scale-95 pointer-events-none"
+				}`}
+			>
+				<div>
 					<ul className="flex flex-col pl-4 w-full">
 						<NavigationLinks
 							href="#about"
@@ -97,7 +127,7 @@ export default function Navbar() {
 						</NavigationLinks>
 					</ul>
 				</div>
-			)}
+			</div>
 		</nav>
 	);
 }

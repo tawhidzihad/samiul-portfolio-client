@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Open_Sans, Poppins } from "next/font/google";
 import "./globals.css";
@@ -25,13 +26,14 @@ export default function RootLayout({ children }) {
 		<html
 			suppressHydrationWarning
 			lang="en"
-			className={`${openSans.className} h-full antialiased light`}
+			className={`${openSans.className} h-full antialiased light scroll-smooth`}
 			data-theme="light"
 		>
 			<body className="min-h-full flex flex-col bg-background text-foreground">
 				<NextThemeProvider>
 					<Navbar></Navbar>
 					<main>{children}</main>
+					<Footer></Footer>
 				</NextThemeProvider>
 			</body>
 		</html>

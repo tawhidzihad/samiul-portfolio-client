@@ -5,7 +5,7 @@ const NavigationLinks = ({ href, children, className }) => {
 		<li className={className}>
 			<Link
 				href={href}
-				className={`hover:border-b-2 border-indigo-950 transition-all duration-100 ease-in-out active:border-b-2 active:border-amber-400`}
+				className={`hover:border-b-2 border-green-500 transition-all duration-100 ease-in-out active:border-b-2 active:border-white text-white`}
 			>
 				{children}
 			</Link>

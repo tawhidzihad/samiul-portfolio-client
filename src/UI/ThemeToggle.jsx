@@ -20,7 +20,7 @@ export default function ThemeToggle() {
 		<button
 			onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
 			variant="ghost"
-			className={`border border-slate-200 rounded-full p-2`}
+			className={`text-white rounded-full p-2`}
 		>
 			{theme === "dark" ? (
 				<Sun className="h-5 w-5" />
