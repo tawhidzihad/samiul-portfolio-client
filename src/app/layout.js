@@ -1,5 +1,5 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import FooterWrapper from "@/UI/FooterWrapper";
+import NavbarWrapper from "@/UI/NavbarWrapper";
 import { Open_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import NextThemeProvider from "./NextThemeProvider";
@@ -31,9 +31,9 @@ export default function RootLayout({ children }) {
 		>
 			<body className="min-h-full flex flex-col bg-background text-foreground">
 				<NextThemeProvider>
-					<Navbar></Navbar>
+					<NavbarWrapper></NavbarWrapper>
 					<main>{children}</main>
-					<Footer></Footer>
+					<FooterWrapper></FooterWrapper>
 				</NextThemeProvider>
 			</body>
 		</html>
