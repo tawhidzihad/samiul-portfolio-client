@@ -55,9 +55,8 @@ export default function Navbar() {
 						<NavigationLinks href="#portfolio">Portfolio</NavigationLinks>
 						<NavigationLinks href="#services">Services</NavigationLinks>
 						<NavigationLinks href="#testimonials">
-							Testimonials
+							Client Reviews
 						</NavigationLinks>
-						<NavigationLinks href="#pricing">Pricing</NavigationLinks>
 					</ul>
 
 					<span className="h-7 w-px bg-gray-600 hidden md:block"></span>
@@ -89,7 +88,7 @@ export default function Navbar() {
 
 			{/* For Mobile Devices */}
 			<div
-				className={`md:hidden absolute z-50 w-full bg-blue-950 dark:bg-black ${
+				className={`md:hidden absolute z-50 w-full bg-blue-950 dark:bg-black py-3 ${
 					isMenuOpen
 						? "opacity-100 transition-all duration-300 translate-y-0 scale-100"
 						: "opacity-0 transition-all duration-300 -translate-y-3 scale-95 pointer-events-none"
@@ -97,34 +96,14 @@ export default function Navbar() {
 			>
 				<div>
 					<ul className="flex flex-col pl-4 w-full">
-						<NavigationLinks
-							href="#about"
-							className={"border-b border-zinc-100 py-3 w-full"}
-						>
-							About
-						</NavigationLinks>
-						<NavigationLinks
-							href="#portfolio"
-							className={"border-b border-zinc-100 py-3 w-full"}
-						>
-							Portfolio
-						</NavigationLinks>
+						<NavigationLinks href="#about">About</NavigationLinks>
 
-						<NavigationLinks
-							href="#services"
-							className={"border-b border-zinc-100 py-3 w-full"}
-						>
-							Services
-						</NavigationLinks>
-						<NavigationLinks
-							href="#testimonials"
-							className={"border-b border-zinc-100 py-3 w-full"}
-						>
-							Testimonials
-						</NavigationLinks>
+						<NavigationLinks href="#portfolio">Portfolio</NavigationLinks>
 
-						<NavigationLinks href="#pricing" className={" py-3 w-full"}>
-							Pricing
+						<NavigationLinks href="#services">Services</NavigationLinks>
+
+						<NavigationLinks href="#testimonials">
+							Client Reviews
 						</NavigationLinks>
 					</ul>
 				</div>
