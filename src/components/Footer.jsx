@@ -26,7 +26,8 @@ const Footer = () => {
 							<div>
 								<h1 className="text-2xl font-bold text-white">
 									Samiul
-									<span className="text-blue-500"> TubeGrowth</span>
+									<span className="text-blue-500 block"> TubeGrowth</span>
+									Studio
 								</h1>
 							</div>
 						</div>

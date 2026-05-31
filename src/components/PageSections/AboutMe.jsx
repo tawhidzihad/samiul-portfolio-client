@@ -4,8 +4,9 @@ import TypeWriting from "@/UI/TypeWriting";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { BsGraphUpArrow } from "react-icons/bs";
-import { FaCheckCircle } from "react-icons/fa";
-import { MdOutlineWatchLater } from "react-icons/md";
+import { FaAward, FaUsers } from "react-icons/fa";
+import { FaHeadphonesSimple, FaRepeat } from "react-icons/fa6";
+import { GiCheckMark } from "react-icons/gi";
 
 const AboutMe = () => {
 	return (
@@ -50,17 +51,19 @@ const AboutMe = () => {
 							</div>
 
 							{/* Stats */}
-							<div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-4">
+							<div className="grid grid-cols-2 sm:grid-cols-3 gap-5 pt-4">
+								{/* Card 1 */}
 								<div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300">
 									<h2 className="text-3xl font-bold text-white flex items-center gap-2">
-										<FaCheckCircle className="bg-green-500 rounded-full h-8 w-auto" />{" "}
-										50+
+										<GiCheckMark className="text-green-500 h-8 w-auto" />{" "}
+										600+
 									</h2>
 									<p className="text-muted text-xs md:text-sm mt-1">
 										Projects Completed
 									</p>
 								</div>
 
+								{/* Card 2 */}
 								<div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300">
 									<h2 className="text-3xl font-bold text-white flex items-center gap-2">
 										<BsGraphUpArrow className="text-green-500 h-8 w-auto" />{" "}
@@ -71,9 +74,43 @@ const AboutMe = () => {
 									</p>
 								</div>
 
+								{/* Card 3 */}
 								<div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300">
 									<h2 className="text-3xl font-bold text-white flex items-center gap-2">
-										<MdOutlineWatchLater className="text-yellow-400 h-8 w-auto" />{" "}
+										<FaAward className="text-green-400 h-8 w-auto" />{" "}
+										5+
+									</h2>
+									<p className="text-muted text-xs md:text-sm mt-1">
+										Years Experience
+									</p>
+								</div>
+
+								{/* Card 4 */}
+								<div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300">
+									<h2 className="text-3xl font-bold text-white flex items-center gap-2">
+										<FaUsers className="text-lime-500 h-8 w-auto" />{" "}
+										500+
+									</h2>
+									<p className="text-muted text-xs md:text-sm mt-1">
+										Happy Clients
+									</p>
+								</div>
+
+								{/* Card 5 */}
+								<div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300">
+									<h2 className="text-3xl font-bold text-white flex items-center gap-2">
+										<FaRepeat className="text-green-500 h-8 w-auto" />{" "}
+										99%
+									</h2>
+									<p className="text-muted text-xs md:text-sm mt-1">
+										Client Retention
+									</p>
+								</div>
+
+								{/* Card 6 */}
+								<div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300">
+									<h2 className="text-3xl font-bold text-white flex items-center gap-2">
+										<FaHeadphonesSimple className="text-yellow-400 h-8 w-auto" />{" "}
 										24/7
 									</h2>
 									<p className="text-muted text-xs md:text-sm mt-1">
