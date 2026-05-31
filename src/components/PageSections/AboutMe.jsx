@@ -53,7 +53,7 @@ const AboutMe = () => {
 							<div className="grid grid-cols-2 sm:grid-cols-3 gap-5 pt-4">
 								<div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300">
 									<h2 className="text-3xl font-bold text-white flex items-center gap-2">
-										<FaCheckCircle className="bg-green-500 rounded-full" />{" "}
+										<FaCheckCircle className="bg-green-500 rounded-full h-8 w-auto" />{" "}
 										50+
 									</h2>
 									<p className="text-muted text-xs md:text-sm mt-1">
@@ -63,7 +63,7 @@ const AboutMe = () => {
 
 								<div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300">
 									<h2 className="text-3xl font-bold text-white flex items-center gap-2">
-										<BsGraphUpArrow className="text-green-500" />{" "}
+										<BsGraphUpArrow className="text-green-500 h-8 w-auto" />{" "}
 										100K+
 									</h2>
 									<p className="text-muted text-xs md:text-sm  mt-1">
@@ -73,7 +73,7 @@ const AboutMe = () => {
 
 								<div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300">
 									<h2 className="text-3xl font-bold text-white flex items-center gap-2">
-										<MdOutlineWatchLater className="text-yellow-400" />{" "}
+										<MdOutlineWatchLater className="text-yellow-400 h-8 w-auto" />{" "}
 										24/7
 									</h2>
 									<p className="text-muted text-xs md:text-sm mt-1">

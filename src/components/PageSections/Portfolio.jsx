@@ -160,7 +160,8 @@ const Portfolio = () => {
 								<Image
 									src={item.image}
 									alt={item.title}
-									fill
+									width={1000}
+									height={1000}
 									className="object-cover transition-transform duration-500 group-hover:scale-110"
 								/>
 
@@ -219,7 +220,7 @@ const Portfolio = () => {
 						{/* Close */}
 						<button
 							onClick={() => setSelectedIndex(null)}
-							className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-red-500 transition-all duration-300"
+							className="absolute z-50  top-6 right-6 w-12 h-12 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-red-500 transition-all duration-300"
 						>
 							<FiX size={24} />
 						</button>
@@ -227,7 +228,7 @@ const Portfolio = () => {
 						{/* Prev */}
 						<button
 							onClick={handlePrev}
-							className="absolute left-4 md:left-10 w-12 h-12 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-blue-600 transition-all duration-300"
+							className="absolute z-50 left-2 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-blue-600 transition-all duration-300"
 						>
 							<FiChevronLeft size={24} />
 						</button>
@@ -235,7 +236,7 @@ const Portfolio = () => {
 						{/* Next */}
 						<button
 							onClick={handleNext}
-							className="absolute right-4 md:right-10 w-12 h-12 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white hover:bg-blue-600 transition-all duration-300"
+							className="absolute z-50 right-2 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-blue-600 transition-all duration-300"
 						>
 							<FiChevronRight size={24} />
 						</button>
@@ -246,15 +247,18 @@ const Portfolio = () => {
 							animate={{ scale: 1, opacity: 1 }}
 							exit={{ scale: 0.8, opacity: 0 }}
 							transition={{ duration: 0.3 }}
-							className="max-w-5xl w-full"
+							className="relative max-w-5xl w-full"
 						>
-							<div className="relative w-full h-75 sm:h-112.5 md:h-150 rounded overflow-hidden border border-white/10">
-								<Image
-									src={filteredItems[selectedIndex].image}
-									alt={filteredItems[selectedIndex].title}
-									fill
-									className="object-cover"
-								/>
+							<div className="relative w-full h-62.5 sm:h-112.5 md:h-150 rounded overflow-hidden border border-white/10">
+								<div className="flex justify-center items-center h-full">
+									<Image
+										src={filteredItems[selectedIndex].image}
+										alt={filteredItems[selectedIndex].title}
+										width={900}
+										height={900}
+										className="h-full w-auto"
+									/>
+								</div>
 							</div>
 
 							<div className="mt-6 text-center">
