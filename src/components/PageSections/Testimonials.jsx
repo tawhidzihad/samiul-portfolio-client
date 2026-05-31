@@ -55,7 +55,7 @@ const Testimonials = () => {
 	return (
 		<section
 			id="testimonials"
-			className="relative bg-blue-950 dark:bg-black py-20 overflow-x-hidden"
+			className="relative bg-blue-950 dark:bg-black pt-10 pb-25 overflow-x-hidden"
 		>
 			<div className="relative max-w-7xl mx-auto px-6 lg:px-0">
 				{/* Heading */}

@@ -41,7 +41,7 @@ const AboutMe = () => {
 									</span>
 								</h1>
 
-								<p className="text-slate-400 font-medium text-lg leading-relaxed max-w-xl">
+								<p className="text-slate-400 font-medium text-[16px] md:text-lg leading-relaxed max-w-xl">
 									I&apos;m a Professional <TypeWriting /> <br />
 									helping brands and creators grow with powerful SEO
 									strategies, engaging content, and high-quality video
@@ -50,7 +50,7 @@ const AboutMe = () => {
 							</div>
 
 							{/* Stats */}
-							<div className="grid grid-cols-2 sm:grid-cols-3 gap-5 pt-4">
+							<div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-4">
 								<div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300">
 									<h2 className="text-3xl font-bold text-white flex items-center gap-2">
 										<FaCheckCircle className="bg-green-500 rounded-full h-8 w-auto" />{" "}

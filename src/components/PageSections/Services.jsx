@@ -7,7 +7,6 @@ import {
 	FiBarChart2,
 	FiImage,
 	FiMonitor,
-	FiPhoneCall,
 	FiShoppingBag,
 	FiTarget,
 	FiTrendingUp,
@@ -78,7 +77,7 @@ const Services = () => {
 	return (
 		<section
 			id="services"
-			className="relative overflow-hidden bg-blue-950 dark:bg-black py-20"
+			className="relative overflow-hidden bg-blue-950 dark:bg-black pt-10 pb-15"
 		>
 			<div className="relative max-w-7xl mx-auto px-6 lg:px-0">
 				{/* Heading */}
@@ -123,22 +122,7 @@ const Services = () => {
 									duration: 0.5,
 									delay: index * 0.08,
 								}}
-								className="
-									group
-									relative
-									overflow-hidden
-									rounded-3xl
-									border
-									border-white/10
-									bg-white/5
-									backdrop-blur-xl
-									p-8
-									transition-all
-									duration-300
-									hover:border-blue-500/50
-									hover:-translate-y-2
-									hover:shadow-[0_0_40px_rgba(59,130,246,0.2)]
-								"
+								className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 transition-all duration-300 hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(59,130,246,0.2)]"
 							>
 								{/* Hover Glow */}
 								<div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-linear-to-br from-blue-500/10 to-transparent" />
@@ -195,7 +179,6 @@ const Services = () => {
 									href=""
 									className="group inline-flex items-center gap-3 rounded-full bg-blue-600 px-8 py-4 font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:shadow-[0_0_35px_rgba(59,130,246,0.45)] active:scale-95"
 								>
-									<FiPhoneCall className="text-lg" />
 									Get Free Consultation
 								</a>
 

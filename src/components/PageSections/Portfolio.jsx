@@ -93,7 +93,7 @@ const Portfolio = () => {
 	return (
 		<section
 			id="portfolio"
-			className="relative overflow-hidden bg-blue-950 dark:bg-black pt-10 md:pt-20 pb-15"
+			className="relative overflow-hidden bg-blue-950 dark:bg-black pt-10 pb-15"
 		>
 			<div className="max-w-7xl mx-auto px-6 lg:px-0">
 				{/* Heading */}
