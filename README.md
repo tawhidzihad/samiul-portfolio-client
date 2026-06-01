@@ -243,6 +243,8 @@ npm run lint
 
 ---
 
+## Server Side Repo: https://github.com/tawhidzihad/samiul-portfolio-server
+
 ## 📄 License
 
 This project is intended for personal and portfolio use.
