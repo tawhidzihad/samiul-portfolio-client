@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import {
 	FiBarChart2,
@@ -13,6 +14,7 @@ import {
 	FiVideo,
 	FiYoutube,
 } from "react-icons/fi";
+import { GiCheckMark } from "react-icons/gi";
 import { IoIosRocket } from "react-icons/io";
 
 const services = [
@@ -20,60 +22,162 @@ const services = [
 		title: "YouTube SEO",
 		icon: FiYoutube,
 		description:
-			"Optimize videos and channels for higher rankings, impressions, and organic growth.",
+			"Optimize videos and channels for higher rankings and organic growth.",
+
+		fullTitle: "Professional YouTube SEO Optimization",
+
+		details:
+			"I help creators improve video rankings, increase impressions, boost click-through rates (CTR), and grow organically through advanced YouTube SEO strategies.",
+
+		features: [
+			"Keyword Research",
+			"Video SEO Optimization",
+			"Channel SEO Setup",
+			"Competitor Analysis",
+			"CTR Improvement Strategy",
+			"Organic Growth Planning",
+		],
 	},
 
 	{
 		title: "YouTube Monetization",
 		icon: FiTrendingUp,
 		description:
-			"Monetization strategy, watch time growth, subscriber growth, and channel optimization.",
+			"Monetization strategy, watch time growth, and channel optimization.",
+
+		fullTitle: "YouTube Monetization & Growth Strategy",
+
+		details:
+			"Helping creators reach monetization requirements faster through strategic content optimization and audience growth techniques.",
+
+		features: [
+			"Watch Time Strategy",
+			"Subscriber Growth",
+			"Monetization Roadmap",
+			"Channel Audit",
+			"Growth Consulting",
+		],
 	},
 
 	{
 		title: "Video Editing",
 		icon: FiVideo,
 		description:
-			"Professional editing with engaging storytelling, smooth transitions, and retention-focused cuts.",
+			"Professional editing with storytelling and retention-focused cuts.",
+
+		fullTitle: "Professional Video Editing Service",
+
+		details:
+			"High-quality video editing designed to increase audience retention and engagement while maintaining a professional brand image.",
+
+		features: [
+			"Cinematic Editing",
+			"Short Form Content",
+			"Transitions & Effects",
+			"Motion Graphics",
+			"Color Correction",
+		],
 	},
 
 	{
 		title: "Thumbnail Design",
 		icon: FiImage,
-		description:
-			"High CTR thumbnail designs that grab attention and increase clicks.",
+		description: "High CTR thumbnail designs that increase clicks.",
+
+		fullTitle: "High Converting Thumbnail Design",
+
+		details:
+			"Custom thumbnails designed to improve click-through rates and make your content stand out from competitors.",
+
+		features: [
+			"CTR Focused Design",
+			"Custom Graphics",
+			"Brand Consistency",
+			"Gaming Thumbnails",
+			"Business Thumbnails",
+		],
 	},
 
 	{
 		title: "Google Ads",
 		icon: FiTarget,
-		description:
-			"Run high-performing Google Ads campaigns to generate leads and conversions.",
+		description: "Generate leads and conversions through Google Ads.",
+
+		fullTitle: "Google Ads Campaign Management",
+
+		details:
+			"Create and manage high-performing Google Ads campaigns that drive targeted traffic, leads, and sales.",
+
+		features: [
+			"Search Ads",
+			"Display Ads",
+			"Keyword Targeting",
+			"Conversion Tracking",
+			"Performance Optimization",
+		],
 	},
 
 	{
 		title: "Facebook Ads",
 		icon: FiBarChart2,
-		description:
-			"Targeted Facebook & Instagram ad campaigns for maximum ROI.",
+		description: "Facebook & Instagram ad campaigns for maximum ROI.",
+
+		fullTitle: "Facebook & Instagram Advertising",
+
+		details:
+			"Targeted advertising campaigns designed to maximize reach, engagement, and conversions.",
+
+		features: [
+			"Audience Research",
+			"Ad Creative Strategy",
+			"Lead Generation",
+			"Retargeting",
+			"ROI Optimization",
+		],
 	},
 
 	{
 		title: "Social Media Management",
 		icon: FiMonitor,
-		description:
-			"Content planning, audience engagement, branding, and growth strategies.",
+		description: "Content planning and audience engagement strategies.",
+
+		fullTitle: "Social Media Management Service",
+
+		details:
+			"Complete social media management including content planning, posting, branding, and audience engagement.",
+
+		features: [
+			"Content Planning",
+			"Page Management",
+			"Audience Engagement",
+			"Growth Strategy",
+			"Brand Development",
+		],
 	},
 
 	{
 		title: "Shopify Design",
 		icon: FiShoppingBag,
-		description:
-			"Modern Shopify store design optimized for conversions and user experience.",
+		description: "Modern Shopify store design for better conversions.",
+
+		fullTitle: "Shopify Store Design & Optimization",
+
+		details:
+			"Professional Shopify store design focused on user experience, trust building, and sales conversions.",
+
+		features: [
+			"Custom Store Design",
+			"Responsive Layout",
+			"Conversion Optimization",
+			"Landing Pages",
+			"Speed Optimization",
+		],
 	},
 ];
 
 const Services = () => {
+	const [selectedService, setSelectedService] = useState(null);
+
 	return (
 		<section
 			id="services"
@@ -114,6 +218,7 @@ const Services = () => {
 
 						return (
 							<motion.div
+								onClick={() => setSelectedService(service)}
 								key={service.title}
 								initial={{ opacity: 0, y: 50 }}
 								whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +245,10 @@ const Services = () => {
 										{service.description}
 									</p>
 
-									<button className="mt-6 text-blue-400 font-medium hover:text-white transition-colors">
+									<button
+										onClick={() => setSelectedService(service)}
+										className="mt-6 text-blue-400 font-medium hover:text-white transition-colors"
+									>
 										Learn More →
 									</button>
 								</div>
@@ -148,6 +256,52 @@ const Services = () => {
 						);
 					})}
 				</div>
+
+				{/* Modal */}
+				<AnimatePresence>
+					{selectedService && (
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							className="fixed inset-0 z-999 backdrop-blur-md flex items-center justify-center p-4"
+							onClick={() => setSelectedService(null)}
+						>
+							<motion.div
+								initial={{ scale: 0.9, opacity: 0 }}
+								animate={{ scale: 1, opacity: 1 }}
+								exit={{ scale: 0.9, opacity: 0 }}
+								onClick={(e) => e.stopPropagation()}
+								className=" max-w-2xl w-full rounded-3xl border border-white/10 bg-blue-950 p-8"
+							>
+								<h2 className="text-3xl font-bold text-white">
+									{selectedService.fullTitle}
+								</h2>
+
+								<p className="text-slate-400 mt-4 leading-relaxed">
+									{selectedService.details}
+								</p>
+
+								<div className="mt-8">
+									<h3 className="text-white font-semibold mb-4">
+										What&apos;s Included:
+									</h3>
+
+									<div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+										{selectedService.features.map((feature) => (
+											<div
+												key={feature}
+												className="rounded-xl bg-white/5 border border-white/10 p-3 text-slate-300 flex items-center gap-2"
+											>
+												<GiCheckMark /> {feature}
+											</div>
+										))}
+									</div>
+								</div>
+							</motion.div>
+						</motion.div>
+					)}
+				</AnimatePresence>
 
 				{/* Bottom CTA */}
 				<motion.div

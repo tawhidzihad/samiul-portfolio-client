@@ -12,7 +12,7 @@ const Footer = () => {
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 					{/* Logo, About & Social Links */}
 					<div className="space-y-5">
-						<div className="flex items-center justify-center gap-5">
+						<div className="flex items-center gap-1">
 							<div className="h-30 w-30 flex items-center">
 								<Link href="/">
 									<Image
@@ -25,9 +25,11 @@ const Footer = () => {
 							</div>
 							<div>
 								<h1 className="text-2xl font-bold text-white">
-									Samiul
-									<span className="text-blue-500 block"> TubeGrowth</span>
-									Studio
+									<span className="flex justify-center">SAMIUL</span>
+									<span className="text-blue-500 block">
+										TubeGrowth
+									</span>
+									<span className="flex justify-center">Studio</span>
 								</h1>
 							</div>
 						</div>

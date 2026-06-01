@@ -6,7 +6,7 @@ import { FiArrowLeft } from "react-icons/fi";
 const PortfolioNavbar = () => {
 	return (
 		<div className="sticky top-0 z-50 backdrop-blur-xl bg-blue-950/80 dark:bg-black/80 border-b border-white/10">
-			<div className="max-w-7xl mx-auto py-4">
+			<div className="max-w-7xl mx-auto px-6 lg:px-0 py-4">
 				<div className="flex items-center justify-between">
 					{/* Back Button */}
 					<Link
@@ -20,7 +20,7 @@ const PortfolioNavbar = () => {
 					{/* CTA */}
 					<Link
 						href="/"
-						className=" group inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 font-medium text-white transition-all duration-300 hover:bg-blue-500 hover:scale-105 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)]"
+						className=" group inline-flex items-center gap-2 rounded-full bg-blue-600 px-3 py-2 md:px-6 md:py-3 font-medium text-white transition-all duration-300 hover:bg-blue-500 hover:scale-105 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)]"
 					>
 						Book a Consultation
 					</Link>
