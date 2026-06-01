@@ -6,52 +6,21 @@ import { FaCheckCircle, FaQuoteLeft, FaStar } from "react-icons/fa";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const testimonials = [
-	{
-		id: 1,
-		name: "John Anderson",
-		role: "YouTube Creator",
-		image: "/images/reviews/client-1.jpg",
-		rating: 5,
-		review:
-			"My channel impressions increased significantly after the SEO optimization. Great communication and excellent results.",
-	},
-
-	{
-		id: 2,
-		name: "Sarah Williams",
-		role: "Business Owner",
-		image: "/images/reviews/client-2.jpg",
-		rating: 5,
-		review:
-			"Professional service and outstanding attention to detail. Highly recommended for content creators.",
-	},
-
-	{
-		id: 3,
-		name: "David Brown",
-		role: "Gaming Creator",
-		image: "/images/reviews/client-3.jpg",
-		rating: 5,
-		review:
-			"The thumbnail designs improved my CTR and helped my videos perform much better.",
-	},
-
-	{
-		id: 4,
-		name: "Emily Carter",
-		role: "Content Creator",
-		image: "/images/reviews/client-4.jpg",
-		rating: 5,
-		review:
-			"Fast delivery, excellent communication, and real growth results. Will work together again.",
-	},
-];
-
 const Testimonials = () => {
+	const [testimonials, setTestimonials] = useState([]);
+
+	useEffect(() => {
+		fetch(`${process.env.NEXT_PUBLIC_API_URL}/review`, {
+			cache: "no-store",
+		})
+			.then((res) => res.json())
+			.then((data) => setTestimonials(data));
+	}, []);
+
 	return (
 		<section
 			id="testimonials"
@@ -110,26 +79,34 @@ const Testimonials = () => {
 						className="w-full"
 					>
 						{testimonials.map((testimonial) => (
-							<SwiperSlide key={testimonial.id} className="h-auto">
+							<SwiperSlide key={testimonial._id} className="h-auto">
 								<div className="h-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 transition-all duration-300 hover:border-blue-500/40 hover:bg-white/[0.07] hover:shadow-[0_0_35px_rgba(59,130,246,0.15)]">
 									{/* Quote */}
 									<FaQuoteLeft className="text-blue-500 text-3xl mb-6" />
 
 									{/* Rating */}
-									<div className="flex gap-1 mb-5">
-										{[...Array(testimonial.rating)].map(
-											(_, index) => (
+									<div className="flex items-center gap-2 mb-5">
+										<div className="flex">
+											{[...Array(5)].map((_, index) => (
 												<FaStar
 													key={index}
-													className="text-yellow-400"
+													className={
+														index < Number(testimonial.rating)
+															? "text-yellow-400"
+															: "text-slate-600"
+													}
 												/>
-											),
-										)}
+											))}
+										</div>
+
+										<span className="text-sm text-slate-400">
+											({testimonial.rating}/5)
+										</span>
 									</div>
 
 									{/* Review */}
-									<p className="text-slate-300 leading-relaxed min-h-30">
-										&quot;`{testimonial.review}&quot;`
+									<p className="text-slate-300 italic leading-relaxed min-h-30">
+										{testimonial.review};
 									</p>
 
 									{/* User */}

@@ -2,7 +2,7 @@ import { getAllPortfolios } from "@/lib/apiFunctions";
 import PortfolioDeleteAlertDialog from "@/UI/PortfolioDeleteAlertDialog";
 import Image from "next/image";
 import Link from "next/link";
-import { FiEdit2, FiFolder } from "react-icons/fi";
+import { FiEdit2 } from "react-icons/fi";
 
 const AllPortfolioPage = async () => {
 	const portfolios = await getAllPortfolios();
@@ -78,21 +78,6 @@ const AllPortfolioPage = async () => {
 					</div>
 				))}
 			</div>
-
-			{/* Empty State */}
-			{portfolios.length === 0 && (
-				<div className="mt-16 rounded-3xl border border-dashed border-white/10 bg-white/5 p-16 text-center">
-					<FiFolder size={50} className="mx-auto text-slate-500" />
-
-					<h3 className="mt-5 text-2xl font-semibold text-white">
-						No Portfolio Found
-					</h3>
-
-					<p className="mt-2 text-slate-400">
-						Start by adding your first portfolio project.
-					</p>
-				</div>
-			)}
 		</div>
 	);
 };

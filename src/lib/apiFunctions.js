@@ -58,3 +58,56 @@ export const deletePortfolio = async (id) => {
 	);
 	return res.json();
 };
+
+/* ========================================= */
+// Add new client-review api call
+export const addNewClientReview = async (data) => {
+	const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/review`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "Application/json",
+		},
+		body: JSON.stringify(data),
+	});
+
+	return res.json();
+};
+
+// Get all portfolios api call
+export const getAllClientReviews = async () => {
+	const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/review`, {
+		cache: "no-store",
+	});
+	return res.json();
+};
+
+// Get single client review api call
+export const getThisReview = async (id) => {
+	const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/review/${id}`, {
+		cache: "no-store",
+	});
+	return res.json();
+};
+
+// Edit single client review api call
+export const editThisClientReview = async (id, data) => {
+	const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/review/${id}`, {
+		method: "PATCH",
+		headers: {
+			"Content-Type": "Application/json",
+		},
+		body: JSON.stringify(data),
+	});
+	return res.json();
+};
+
+// Delete portfolio api call
+export const deleteClientReview = async (id) => {
+	const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/review/${id}`, {
+		method: "DELETE",
+		headers: {
+			"Content-Type": "Application/json",
+		},
+	});
+	return res.json();
+};
