@@ -12,6 +12,12 @@ const NavbarWrapper = () => {
 	if (pathname.startsWith("/dashboard")) {
 		return null;
 	}
+	if (pathname.startsWith("/signup")) {
+		return null;
+	}
+	if (pathname.startsWith("/signin")) {
+		return null;
+	}
 
 	return <Navbar />;
 };

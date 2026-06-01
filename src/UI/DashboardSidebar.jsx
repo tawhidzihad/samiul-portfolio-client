@@ -1,8 +1,10 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { CiLogout } from "react-icons/ci";
 import { FaHome } from "react-icons/fa";
 
@@ -15,12 +17,18 @@ import {
 } from "react-icons/fi";
 
 const DashboardSidebar = () => {
+	const router = useRouter();
 	const pathname = usePathname();
-
 	const [isOpen, setIsOpen] = useState(false);
 
 	const [portfolioOpen, setPortfolioOpen] = useState(true);
 	const [reviewsOpen, setReviewsOpen] = useState(true);
+
+	const handleLogOut = async () => {
+		await authClient.signOut();
+		toast.success("Logout success");
+		router.push("/");
+	};
 
 	return (
 		<>
@@ -198,8 +206,8 @@ const DashboardSidebar = () => {
 					</div>
 
 					{/* Logout */}
-					<div>
-						<Link
+					<div onClick={handleLogOut} className="cursor-pointer">
+						<span
 							href={"/"}
 							className="w-full flex items-center justify-between p-3 rounded-xl text-white hover:bg-blue-500/10s"
 						>
@@ -207,7 +215,7 @@ const DashboardSidebar = () => {
 								<CiLogout className="h-6 w-auto" />
 								Log Out
 							</div>
-						</Link>
+						</span>
 					</div>
 				</div>
 			</aside>

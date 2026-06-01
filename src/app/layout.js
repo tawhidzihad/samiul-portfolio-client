@@ -1,3 +1,8 @@
+import dns from "node:dns";
+
+dns.setDefaultResultOrder("ipv4first");
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
+
 import FooterWrapper from "@/UI/FooterWrapper";
 import NavbarWrapper from "@/UI/NavbarWrapper";
 import { Open_Sans, Poppins } from "next/font/google";
