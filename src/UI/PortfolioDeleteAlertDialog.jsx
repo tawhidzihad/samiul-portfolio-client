@@ -50,7 +50,7 @@ export default function PortfolioDeleteAlertDialog({ portfolio }) {
 								variant="danger"
 								onClick={handleDelete}
 							>
-								Delete Project
+								Delete
 							</Button>
 						</AlertDialog.Footer>
 					</AlertDialog.Dialog>

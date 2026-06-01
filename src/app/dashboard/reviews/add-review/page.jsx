@@ -128,7 +128,7 @@ const AddReview = () => {
 							type="submit"
 							className="flex-1 rounded-xl bg-blue-600 hover:bg-blue-500 py-3 font-medium text-white transition-all duration-300"
 						>
-							Add Portfolio
+							Add Client Review
 						</button>
 
 						<button

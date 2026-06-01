@@ -50,7 +50,7 @@ export default function ClientReviewDeleteAlertDialog({ review }) {
 								variant="danger"
 								onClick={handleDelete}
 							>
-								Delete Project
+								Delete
 							</Button>
 						</AlertDialog.Footer>
 					</AlertDialog.Dialog>
