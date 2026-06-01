@@ -1,36 +1,248 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 📸 Preview
 
-## Getting Started
+![Portfolio Screenshot](./public/preview.png)
 
-First, run the development server:
+# Samiul Portfolio Website
+
+A modern and fully responsive personal portfolio website built with Next.js, showcasing professional services, portfolio projects, client reviews, and an admin dashboard for content management.
+
+## 🚀 Live Features
+
+### Public Website
+
+- Modern Responsive Design
+- Dark / Light Mode
+- Animated Hero Section
+- About Me Section
+- Services Showcase
+- Portfolio Gallery
+- Portfolio Filtering
+- Portfolio Modal Preview
+- Client Reviews Slider
+- Pricing Section
+- Contact Section
+- WhatsApp Integration
+- Professional Footer
+
+### Admin Dashboard
+
+- Secure Authentication
+- Add Portfolio
+- Edit Portfolio
+- Delete Portfolio
+- Manage Client Reviews
+- Responsive Dashboard Layout
+- Protected Routes
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+- Next.js 16
+- React 19
+- Tailwind CSS 4
+- Framer Motion
+- Swiper.js
+- HeroUI
+- Next Themes
+
+### Backend
+
+- Better Auth
+- MongoDB
+- MongoDB Adapter
+
+### UI Libraries
+
+- React Icons
+- Lucide React
+- Gravity UI Icons
+- React Hot Toast
+
+---
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/tawhidzihad/samiul-portfolio-client.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd samiul-portfolio-client
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env.local` file in the root directory and add the following variables:
+
+```env
+BETTER_AUTH_SECRET=your_secret_key
+
+BETTER_AUTH_URL=http://localhost:3000
+
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+MONGO_DB_URI=your_mongodb_connection_string
+
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```txt
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🔑 Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+| Variable             | Description            |
+| -------------------- | ---------------------- |
+| BETTER_AUTH_SECRET   | Better Auth Secret Key |
+| BETTER_AUTH_URL      | Better Auth Base URL   |
+| NEXT_PUBLIC_BASE_URL | Frontend Base URL      |
+| MONGO_DB_URI         | MongoDB Database URI   |
+| NEXT_PUBLIC_API_URL  | API Base URL           |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📂 Project Structure
 
-## Deploy on Vercel
+```txt
+src
+│
+├── app
+│   ├── dashboard
+│   ├── portfolio
+│   ├── login
+│   ├── signup
+│
+├── components
+│   ├── Navbar
+│   ├── Footer
+│   ├── Portfolio
+│   ├── Services
+│   ├── Testimonials
+│
+├── lib
+│
+├── hooks
+│
+├── providers
+│
+└── utils
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 Available Scripts
+
+### Development
+
+```bash
+npm run dev
+```
+
+### Production Build
+
+```bash
+npm run build
+```
+
+### Start Production Server
+
+```bash
+npm run start
+```
+
+### Run ESLint
+
+```bash
+npm run lint
+```
+
+---
+
+## 📦 Dependencies
+
+### Main Dependencies
+
+- @better-auth/mongo-adapter
+- @heroui/react
+- @heroui/styles
+- better-auth
+- framer-motion
+- lucide-react
+- mongodb
+- next
+- next-themes
+- react
+- react-dom
+- react-hot-toast
+- react-icons
+- react-type-animation
+- swiper
+
+### Development Dependencies
+
+- @gravity-ui/icons
+- @tailwindcss/postcss
+- eslint
+- eslint-config-next
+- tailwindcss
+
+---
+
+## 🎯 Key Features
+
+### Portfolio Management
+
+- Add Portfolio
+- Edit Portfolio
+- Delete Portfolio
+- Category Filtering
+- Image Preview
+
+### Client Reviews Management
+
+- Add Review
+- Edit Review
+- Delete Review
+- Dynamic Review Slider
+
+### Authentication
+
+- Better Auth Integration
+- Secure Login
+- Secure Registration
+- Protected Dashboard Routes
+
+### User Experience
+
+- Responsive Design
+- Smooth Animations
+- Dark/Light Theme
+- Mobile Friendly Layout
+
+---
+
+## 📄 License
+
+This project is intended for personal and portfolio use.
