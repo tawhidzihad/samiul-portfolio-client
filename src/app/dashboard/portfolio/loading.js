@@ -1,6 +1,6 @@
 const Loading = () => {
 	return (
-		<div className="min-h-screen bg-blue-950 dark:bg-black flex items-center justify-center overflow-hidden">
+		<div className="min-h-screen flex items-center justify-center overflow-hidden">
 			{/* Background Glow */}
 			<div className="absolute w-125 h-125 *:rounded-full bg-blue-600/10 blur-[150px]" />
 
