@@ -32,10 +32,7 @@ const SignInPage = () => {
 	};
 
 	return (
-		<div className="min-h-screen h-full w-full bg-blue-950 dark:bg-black flex items-center justify-center px-4 py-10">
-			{/* Background Glow */}
-			<div className="absolute top-0 left-1/2 -translate-x-1/2 w-125 h-125 bg-blue-600/10 blur-[150px] rounded-full" />
-
+		<div className="min-h-screen bg-blue-950 dark:bg-black flex items-center justify-center px-4 py-10">
 			<div className="relative w-full max-w-md rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 shadow-[0_0_40px_rgba(59,130,246,0.15)]">
 				{/* Heading */}
 				<div className="text-center mb-8">
