@@ -4,7 +4,7 @@ import { Chip } from "@heroui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
 	FiArrowUpRight,
 	FiChevronLeft,
@@ -12,64 +12,27 @@ import {
 	FiX,
 } from "react-icons/fi";
 
-const categories = ["All", "YouTube SEO", "Thumbnail Design", "Video Editing"];
-
-const portfolioItems = [
-	{
-		id: 1,
-		title: "YouTube SEO Growth",
-		category: "YouTube SEO",
-		image: "/images/workproof/seo-1.jpg",
-		description:
-			"Boosted channel impressions, CTR and organic reach through advanced SEO optimization.",
-	},
-
-	{
-		id: 2,
-		title: "Gaming Thumbnail",
-		category: "Thumbnail Design",
-		image: "/images/workproof/seo-2.jpg",
-		description:
-			"High-converting thumbnail design with strong CTR optimization.",
-	},
-
-	{
-		id: 3,
-		title: "Cinematic Video Editing",
-		category: "Video Editing",
-		image: "/images/workproof/seo-3.jpg",
-		description:
-			"Professional cinematic editing with smooth transitions and storytelling.",
-	},
-
-	{
-		id: 4,
-		title: "Monetization Proof",
-		category: "YouTube SEO",
-		image: "/images/workproof/seo-4.jpg",
-		description:
-			"Helped creators reach monetization goals using SEO strategy.",
-	},
-
-	{
-		id: 5,
-		title: "Modern Thumbnail Design",
-		category: "Thumbnail Design",
-		image: "/images/workproof/seo-5.jpg",
-		description: "Modern eye-catching thumbnail optimized for better clicks.",
-	},
-
-	{
-		id: 6,
-		title: "YouTube Shorts Editing",
-		category: "Video Editing",
-		image: "/images/workproof/seo-1.jpg",
-		description:
-			"Engaging shorts editing with captions and viral style pacing.",
-	},
+const categories = [
+	"All",
+	"YouTube SEO",
+	"Thumbnail Design",
+	"Video Editing",
+	"Facebook Ads",
+	"Google Ads",
+	"YouTube Watch Time & Monetization",
 ];
 
 const Portfolio = () => {
+	const [portfolioItems, setportfolioItems] = useState([]);
+
+	useEffect(() => {
+		fetch(`${process.env.NEXT_PUBLIC_API_URL}/portfolio`, {
+			cache: "no-store",
+		})
+			.then((res) => res.json())
+			.then((data) => setportfolioItems(data));
+	}, []);
+
 	const [activeCategory, setActiveCategory] = useState("All");
 	const [selectedIndex, setSelectedIndex] = useState(null);
 
@@ -145,7 +108,7 @@ const Portfolio = () => {
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
 					{filteredItems.map((item, index) => (
 						<motion.div
-							key={item.id}
+							key={item._id}
 							initial={{ opacity: 0, y: 40 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{

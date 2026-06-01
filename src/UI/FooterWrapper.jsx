@@ -9,6 +9,9 @@ const FooterWrapper = () => {
 	if (pathname.startsWith("/portfolio")) {
 		return null;
 	}
+	if (pathname.startsWith("/dashboard")) {
+		return null;
+	}
 
 	return <Footer />;
 };

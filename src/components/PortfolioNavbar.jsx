@@ -6,8 +6,8 @@ import { FiArrowLeft } from "react-icons/fi";
 const PortfolioNavbar = () => {
 	return (
 		<div className="sticky top-0 z-50 backdrop-blur-xl bg-blue-950/80 dark:bg-black/80 border-b border-white/10">
-			<div className="max-w-7xl mx-auto px-6 lg:px-0 py-4">
-				<div className="flex items-center justify-between">
+			<div className="max-w-7xl mx-auto px-3 lg:px-0 py-4">
+				<div className="flex items-center justify-between gap-3">
 					{/* Back Button */}
 					<Link
 						href="/"

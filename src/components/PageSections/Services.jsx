@@ -12,6 +12,7 @@ import {
 	FiTarget,
 	FiTrendingUp,
 	FiVideo,
+	FiX,
 	FiYoutube,
 } from "react-icons/fi";
 import { GiCheckMark } from "react-icons/gi";
@@ -272,8 +273,16 @@ const Services = () => {
 								animate={{ scale: 1, opacity: 1 }}
 								exit={{ scale: 0.9, opacity: 0 }}
 								onClick={(e) => e.stopPropagation()}
-								className=" max-w-2xl w-full rounded-3xl border border-white/10 bg-blue-950 p-8"
+								className="relative max-w-2xl w-full rounded-3xl border border-white/10 bg-blue-950 p-8"
 							>
+								{/* Close Button */}
+								<button
+									onClick={() => setSelectedService(null)}
+									className="absolute top-4 right-4 z-10 w-11 h-11 rounded-full bg-white/5 border border-white/10 text-slate-300 flex items-center justify-center transition-all duration-300 hover:bg-red-500 hover:border-red-500 hover:text-white active:scale-95"
+								>
+									<FiX size={22} />
+								</button>
+
 								<h2 className="text-3xl font-bold text-white">
 									{selectedService.fullTitle}
 								</h2>

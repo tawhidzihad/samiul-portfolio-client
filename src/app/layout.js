@@ -1,6 +1,7 @@
 import FooterWrapper from "@/UI/FooterWrapper";
 import NavbarWrapper from "@/UI/NavbarWrapper";
 import { Open_Sans, Poppins } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import NextThemeProvider from "./NextThemeProvider";
 
@@ -24,6 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html
+			data-scroll-behavior="smooth"
 			suppressHydrationWarning
 			lang="en"
 			className={`${openSans.className} h-full antialiased light scroll-smooth`}
@@ -35,6 +37,7 @@ export default function RootLayout({ children }) {
 					<main>{children}</main>
 					<FooterWrapper></FooterWrapper>
 				</NextThemeProvider>
+				<Toaster />
 			</body>
 		</html>
 	);
