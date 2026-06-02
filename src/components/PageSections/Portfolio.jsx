@@ -138,7 +138,7 @@ const Portfolio = () => {
 							</div>
 
 							<div className="p-3 flex flex-col justify-center items-center gap-3">
-								<h2 className="text-xl font-semibold text-white">
+								<h2 className="text-xl text-center font-semibold text-white">
 									{item.title}
 								</h2>
 								<button className="text-blue-400 font-medium hover:text-white transition-colors duration-300">
