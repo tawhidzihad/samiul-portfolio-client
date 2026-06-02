@@ -19,7 +19,7 @@ const PortfolioNavbar = () => {
 
 					{/* CTA */}
 					<Link
-						href="/"
+						href="https://calendly.com/samiulislamtubegrowthstudio/30min"
 						className=" group inline-flex items-center gap-2 rounded-full bg-blue-600 px-3 py-2 md:px-6 md:py-3 font-medium text-white transition-all duration-300 hover:bg-blue-500 hover:scale-105 hover:shadow-[0_0_25px_rgba(59,130,246,0.4)]"
 					>
 						Book a Consultation
