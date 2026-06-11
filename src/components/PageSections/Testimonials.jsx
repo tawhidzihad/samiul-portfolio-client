@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { FaCheckCircle, FaQuoteLeft, FaStar } from "react-icons/fa";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { Avatar } from "@heroui/react";
 import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -111,14 +111,37 @@ const Testimonials = () => {
 
 									{/* User */}
 									<div className="mt-8 pt-6 border-t border-white/10 flex items-center gap-4">
-										<div className="relative w-14 h-14 rounded-full overflow-hidden border border-blue-500/30">
+										{/* <div className="relative w-14 h-14 rounded-full overflow-hidden border border-blue-500/30">
 											<Image
 												src={testimonial.image}
 												alt={testimonial.name}
-												fill
-												className="object-cover"
+												width={80}
+												height={80}
+												className="h-full w-auto object-cover"
 											/>
-										</div>
+										</div> */}
+
+										<Avatar>
+											<Avatar.Image
+												alt={testimonial.name}
+												src={testimonial.image}
+											/>
+											<Avatar.Fallback>
+												{testimonial.name
+													?.trim()
+													?.split(/\s+/)
+													?.map((word) => word[0])
+													?.filter(Boolean)
+													?.map((_, index, arr) =>
+														index === 0 ||
+														index === arr.length - 1
+															? arr[index]
+															: null,
+													)
+													?.join("")
+													?.toUpperCase() || "U"}
+											</Avatar.Fallback>
+										</Avatar>
 
 										<div>
 											<div className="flex items-center gap-2">

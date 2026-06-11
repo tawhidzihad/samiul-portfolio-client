@@ -140,8 +140,8 @@ const AboutMe = () => {
 									<Image
 										src="/images/samiul-islam.png"
 										alt="Samiul Islam"
-										fill
 										className="object-cover group-hover:scale-105 transition-all duration-500 ease-in-out"
+										fill
 										priority
 									/>
 								</div>

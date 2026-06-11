@@ -2,7 +2,7 @@
 
 ![Portfolio Screenshot](./public/preview.png)
 
-# Samiul Portfolio Website
+# Samiul TubeGrowth Studio
 
 A modern and fully responsive personal portfolio website built with Next.js, showcasing professional services, portfolio projects, client reviews, and an admin dashboard for content management.
 
